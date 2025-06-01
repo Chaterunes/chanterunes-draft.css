@@ -74,6 +74,11 @@
 /*** ------------------------------- ***/
 /*** TOUTES LES PAGES --------------- ***/
 
+/* DEFILEMENT SMOOTH ---*/
+html {
+  scroll-behavior: smooth;
+}
+
 /* FOND DU FORUM ---*/
 body {
   margin: 0 !important;
