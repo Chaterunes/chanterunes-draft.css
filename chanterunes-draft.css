@@ -2364,3 +2364,30 @@ form[name="form_login"] .content {
 	padding: 10px;
 	width: 450px;
 }
+
+/* ==================================================
+	CUSTOM STYLING
+===================================================== */
+
+#c1 > .forums {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* max 2 colonnes */
+  grid-auto-rows: auto;
+  gap: 1rem; /* facultatif : espacement entre les éléments */
+}
+
+/* Placement manuel des blocs */
+#c1 > .forums > .forum:nth-child(1) {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+#c1 > .forums > .forum:nth-child(2) {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+#c1 > .forums > .forum:nth-child(3) {
+  grid-row: 1 / span 2; /* occupe deux lignes */
+  grid-column: 2;
+}
