@@ -10,31 +10,31 @@
 :root {
 	color-scheme: light;
 	--header: url("https://zupimages.net/up/22/24/ic0o.jpg");
-
+	
 	--neutral: #fafbfc;
 	--neutralDark: #f2f4f9;
 	--neutralDarker: #dce3f4;
-
+	
 	--contrast: #171938;
 	--contrastLight: #232657;
 	--contrastLighter: #c3c8f3;
-
+	
 	--accentClr: #4b57c5;
 	--accentClrDark: #333c92;
-
+	
 	--textColor: #232657;
 	--textColorAccent: #000;
-
+	
 	--border: 1px solid #e5e5e5;
-
+	
 	--shadowBox: 0 0 20px #23265730;
-
+	
 	--little-size: 12px;
 	--normal-size: 14px;
 	--medium-size: 16px;
 	--large-size: 18px;
 	--title-size: 22px;
-
+	
 	--font: "Open Sans";
 }
 
@@ -42,23 +42,23 @@
 [data-color-scheme="dark"] {
 	color-scheme: dark;
 	--header: url("https://zupimages.net/up/22/24/ic0o.jpg");
-
+	
 	--neutral: #1e212a;
 	--neutralDark: #181a21;
 	--neutralDarker: #313543;
-
+	
 	--contrast: #e5e5f0;
 	--contrastLight: #f4f4f4;
 	--contrastLighter: #40485e;
-
+	
 	--accentClr: #7583ff;
 	--accentClrDark: #333c92;
-
+	
 	--textColor: #c7c5cd;
 	--textColorAccent: #e5e5f0;
-
+	
 	--border: 1px solid #2b2e3b;
-
+	
 	--shadowBox: 0 0 20px var(--neutralDark);
 }
 
@@ -300,41 +300,41 @@ button {
 
 /* Au survol */
 :hover:is(
-		input:is(
-				[type="submit"],
-				[type="button"],
-				[type="hidden"],
-				[type="reset"]
-			),
-		.button
-	) {
+input:is(
+[type="submit"],
+[type="button"],
+[type="hidden"],
+[type="reset"]
+),
+.button
+) {
 	color: var(--accentClr);
 }
 
 /* Boutons désactivés */
 :disabled:is(
-		input:is(
-				[type="submit"],
-				[type="button"],
-				[type="hidden"],
-				[type="reset"]
-			),
-		.button
-	) {
+input:is(
+[type="submit"],
+[type="button"],
+[type="hidden"],
+[type="reset"]
+),
+.button
+) {
 	opacity: 0.5;
 	filter: saturate(1);
 	cursor: not-allowed;
 }
 
 :disabled:hover:is(
-		input:is(
-				[type="submit"],
-				[type="button"],
-				[type="hidden"],
-				[type="reset"]
-			),
-		.button
-	) {
+input:is(
+[type="submit"],
+[type="button"],
+[type="hidden"],
+[type="reset"]
+),
+.button
+) {
 	color: inherit;
 }
 
@@ -630,7 +630,7 @@ a.specials_links:empty {
 	overflow: auto;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
-
+	
 	/* Désactive la barre de défilement dans le contenenur */
 	&::-webkit-scrollbar {
 		display: none;
@@ -656,13 +656,13 @@ a.specials_links:empty {
 	display: grid;
 	justify-items: end;
 	gap: 5px;
-
+	
 	/* Bouton d'action */
 	button {
 		border-radius: 5px;
 		background: var(--neutralDark);
 		padding: 2px 10px;
-
+		
 		&:hover {
 			color: var(--accentClr);
 		}
@@ -679,7 +679,7 @@ a.specials_links:empty {
 	border: 1px solid transparent;
 	border-radius: 5px;
 	padding: 10px;
-
+	
 	/* Notification au survol */
 	&:hover {
 		border-color: var(--neutralDarker);
@@ -691,7 +691,7 @@ a.specials_links:empty {
 	from {
 		opacity: 0;
 	}
-
+	
 	to {
 		opacity: 1;
 	}
@@ -714,7 +714,7 @@ a.specials_links:empty {
 	background: var(--neutral);
 	aspect-ratio: 1;
 	height: 35px;
-
+	
 	/* Image de l'avatar */
 	& img {
 		border-radius: 5px;
@@ -2366,28 +2366,38 @@ form[name="form_login"] .content {
 }
 
 /* ==================================================
-	CUSTOM STYLING
+CUSTOM STYLING
 ===================================================== */
 
 #c1 > .forums {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* max 2 colonnes */
-  grid-auto-rows: auto;
-  gap: 1rem; /* facultatif : espacement entre les éléments */
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* Deux colonnes fixes */
+	grid-template-areas:
+	"forum1 forum3"
+	"forum2 forum3"; /* layout en 2 lignes */
+	gap: 1rem;
 }
 
-/* Placement manuel des blocs */
+/* Affecte les zones */
 #c1 > .forums > .forum:nth-child(1) {
-  grid-row: 1;
-  grid-column: 1;
+	grid-area: forum1;
 }
 
 #c1 > .forums > .forum:nth-child(2) {
-  grid-row: 2;
-  grid-column: 1;
+	grid-area: forum2;
 }
 
 #c1 > .forums > .forum:nth-child(3) {
-  grid-row: 1 / span 2; /* occupe deux lignes */
-  grid-column: 2;
+	grid-area: forum3;
+}
+
+/* Ajoute un comportement responsive fluide */
+@container (max-width: 650px) {
+	#c1 > .forums {
+		grid-template-columns: 1fr; /* 1 seule colonne */
+		grid-template-areas:
+		"forum1"
+		"forum2"
+		"forum3"; /* stack en 1 colonne */
+	}
 }
