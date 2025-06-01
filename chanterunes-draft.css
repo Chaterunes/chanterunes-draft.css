@@ -100,7 +100,8 @@ body {
   border-radius: 5px;
   background: var(--neutral);
   padding: 20px;
-  width: 940px;
+  width: 100%;
+  max-width: 1024px;
 }
 
 /* BANNIERE ---*/
