@@ -43,7 +43,7 @@
 }
 
 /* VARIABLES DU MODE INVERSE (ici sombre) */
-[data-color-scheme="dark"] {
+/* [data-color-scheme="dark"] {
 	color-scheme: dark;
 	--header: url("https://zupimages.net/up/22/24/ic0o.jpg");
 	
@@ -64,7 +64,7 @@
 	--border: 1px solid #2b2e3b;
 	
 	--shadowBox: 0 0 20px var(--neutralDark);
-}
+} */
 
 /* S'applique à TOUS les éléments du forum*/
 * {
