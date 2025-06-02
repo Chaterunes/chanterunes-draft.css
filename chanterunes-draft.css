@@ -2392,7 +2392,7 @@ CUSTOM STYLING
 }
 
 /* Ajoute un comportement responsive fluide */
-@container (max-width: 650px) {
+@media (max-width: 806px) {
 	#c1 > .forums {
 		grid-template-columns: 1fr; /* 1 seule colonne */
 		grid-template-areas:
